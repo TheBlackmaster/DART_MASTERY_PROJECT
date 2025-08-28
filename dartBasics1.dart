@@ -1,6 +1,6 @@
 // Variable Declaration, Initialization, Printing, and String Interpolation
 
-void main(){
+void main() {
   String drugName;
   int currentStock;
   int reorderLevel;
@@ -12,12 +12,12 @@ void main(){
   print("""
 Drug = $drugName
 Current Stock = $currentStock
-Reorder Level = $reorderLevel
+Reorder Level = ß$reorderLevel
 """);
 
-if(currentStock <= reorderLevel){
-  print('Stock Status: Inufficient (below reorder level)');
-}else{
-  print('Stock Status: Sufficient (above reorder level)');
-}
+  if (currentStock <= reorderLevel) {
+    print('Stock Status: Inufficient (below reorder level)');
+  } else {
+    print('Stock Status: Sufficient (above reorder level)');
+  }
 }
