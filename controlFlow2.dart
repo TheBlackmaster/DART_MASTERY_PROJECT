@@ -11,17 +11,21 @@ void main() {
 
   while (metforminStock > 10) {
     for (var patient in patientIds) {
-      metforminStock -= 5;
-      if (patientIds.contains(999)) {
-        patientIds.remove(999);
-        metforminStock += 5;
+      if (patient == 999) {
         print('Skipping Patient 999 (blacklisted)');
-        break;
-      } else {
-        print(
-          'Dispensing to patient $patient ... Remaining stock: ${metforminStock}',
-        );
+        continue;
+      } 
+      
+      
+      if(metforminStock >=5 ){
+        metforminStock -= 5;
+        print('Dispensing to patient $patient ... Remaining stock: $metforminStock');
+      } else{
+         print('Not enough stock for patient $patient');
+        break; // exits loop if stock is insufficient
       }
+
     }
+    break; // prevent infinite loop (one round of dispensing only)
   }
 }
