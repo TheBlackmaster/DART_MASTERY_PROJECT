@@ -1,6 +1,7 @@
 enum StockLevel { Full, Low, OutOfStock }
 
 void main() {
+  int lowStockCount = 0; // 🔹 counter variable
   final pharmacyStock = [
     {"drugName": "Paracetamol", "stockLevel": StockLevel.Full, "quantity": 120},
     {"drugName": "Ciprofloxacin", "stockLevel": StockLevel.Low, "quantity": 15},
@@ -28,15 +29,14 @@ void main() {
         print(
           'Drug ${drug['drugName']} is running low (${drug['quantity']} units left). Reorder soon.',
         );
+        lowStockCount++; // 🔹 increment counter
         break;
       case StockLevel.OutOfStock:
         print('Drug ${drug['drugName']} is out of stock! Reorder immediately.');
         break;
-      default:
+      default: 
+      print('Error!');
     }
-print('STOCK COUNTER');
-    if(drug['stockLevel'] == StockLevel.Low){
-print('Low stock');
-    }
+print('\nSTOCK COUNTER: $lowStockCount drug(s) running low.');
   }
 }
