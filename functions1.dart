@@ -8,13 +8,13 @@ drugName = 'Amoxicillin';
 quantity = 12;
 reorderLevel = 20;
 
-stockCalculator(quantity, reorderLevel, drugName);
-
+final stockLevel = stockCalculator(quantity, reorderLevel, drugName);
+print(stockLevel);
 }
 
-void stockCalculator(int quantity, int reorderLevel, String drugName){
+String stockCalculator(int quantity, int reorderLevel, String drugName){
 if(quantity < reorderLevel){
-  print('Time to reorder $drugName');
+  return 'Time to reorder $drugName';
 } else {
-  print('$drugName stock is sufficient');
+  return '$drugName stock is sufficient';
 }}
